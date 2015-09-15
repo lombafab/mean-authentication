@@ -1,7 +1,7 @@
 /**
  * Created by fabiolombardi on 15/09/2015.
  */
-angular.module('myapp').factory('AuthService', ['$q','$timeout', '$http', function($q, $timeout, $http){
+angular.module('myApp').factory('AuthService', ['$q','$timeout', '$http', function($q, $timeout, $http){
 
     // create user variable
     var user = null;
@@ -28,7 +28,7 @@ angular.module('myapp').factory('AuthService', ['$q','$timeout', '$http', functi
             .success(function(data, status) {
                if (status === 200 && data.status){
                    user = true;
-                   deferred.resolve;
+                   deferred.resolve();
                } else {
                    user = false;
                    deferred.reject();

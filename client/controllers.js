@@ -1,14 +1,14 @@
 /**
  * Created by fabiolombardi on 15/09/2015.
  */
-angular.module('myApp').controller('loginController', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService){
+angular.module('myApp').controller('loginCtrl', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService){
 
     console.log(AuthService.getUserStatus());
 
     $scope.login = function() {
         // initial values
         $scope.error = false;
-        $scope.disabled = true;
+        $scope.disabled = false;
 
         // call login form service
         AuthService.login($scope.loginForm.username, $scope.loginForm.password)
@@ -24,5 +24,5 @@ angular.module('myApp').controller('loginController', ['$scope', '$location', 'A
                 $scope.error = true;
                 $scope.errorMessage = "Invalid username and/or password";
             })
-    }
+    };
 }]);
